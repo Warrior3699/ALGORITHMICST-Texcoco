@@ -1,0 +1,392 @@
+package Metodos;
+
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+ 
+
+/**
+ *
+ * @author diego
+ */
+public class Metodos {
+    
+    public void Ejercicio1(){
+        Scanner scanner = new Scanner(System.in);
+        int a, b;
+
+        System.out.println("Ingresa dos valores, uno por uno:");
+
+        while (true) {
+            System.out.print("Primer valor: ");
+            a = scanner.nextInt();
+
+            System.out.print("Segundo valor: ");
+            b = scanner.nextInt();
+
+            if (a > 100 && b > 100) {
+                System.out.println("Ambos valores son mayores a 100. Deteniendo el programa.");
+                break; // Sale del bucle while
+            } else {
+                System.out.println("Al menos uno de los valores es menor o igual a 100. Continuando...");
+            }
+        }
+        
+        try {
+            Thread.sleep(3000);// permite detener la ejecución del thread durante t milisegundos.
+        } catch (Exception e) {
+            System.out.println("");
+        }
+        System.out.println(" ");
+    }
+    
+   
+
+    
+     public void Ejercicio2(){
+
+Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingrese el límite inferior: ");
+        int limiteInferior = scanner.nextInt();
+
+        System.out.print("Ingrese el límite superior: ");
+        int limiteSuperior = scanner.nextInt();
+
+        System.out.print("Ingrese el valor de n: ");
+        int n = scanner.nextInt();
+
+        if (limiteInferior < limiteSuperior && n > 0) {
+            System.out.println("Serie de números entre " + limiteInferior + " y " + limiteSuperior + " en incrementos de " + n + ":");
+            for (int i = limiteInferior; i <= limiteSuperior; i += n) {
+                System.out.print(i + " ");
+            }
+        } else {
+            System.out.println("Los valores ingresados no son válidos.");
+        }
+
+        
+    }
+        
+    
+     
+     public void Ejercicio3(){
+
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingrese el límite inferior: ");
+        int limiteInferior = scanner.nextInt();
+
+        System.out.print("Ingrese el límite superior: ");
+        int limiteSuperior = scanner.nextInt();
+
+        System.out.print("Ingrese el valor de n: ");
+        int n = scanner.nextInt();
+
+        if (limiteInferior <= limiteSuperior && n > 0) {
+            System.out.println("Múltiplos de " + n + " entre " + limiteInferior + " y " + limiteSuperior + ":");
+            for (int i = limiteInferior; i <= limiteSuperior; i++) {
+                if (i % n == 0) {
+                    System.out.print(i + " ");
+                }
+            }
+        } else {
+            System.out.println("Los valores ingresados no son válidos.");
+        }
+
+        
+    }
+
+
+        
+    
+      
+     public void Ejercicio4(){
+
+     Scanner entrada = new Scanner(System.in);
+     int arreglo[], nElementos, pos,aux;
+     
+     nElementos = Integer.parseInt(JOptionPane.showInputDialog("Diguite el numero de elementos del arreglo"));
+     arreglo = new int[nElementos];  //El arreglo va a tener tantos elementos enteros que el usuario decida
+     
+        System.out.println("Diguite el arreglo :");
+        
+        for (int i = 0; i < nElementos; i++) {//bucle for
+            System.out.println((i+1)+ "-.Diguite un numero");//agregar iterador para saber la posicion 
+            arreglo[i] = entrada.nextInt();// todos los elementos del arreglo tiene que guardarse dentro
+        }
+        
+        //ordenamiento por burbuja
+        
+         for (int i = 0; i <(nElementos-1); i++) {
+             for (int j = 0; j < (nElementos-1); j++) {
+                 if (arreglo[j]>arreglo [j+1]) {
+                     aux =arreglo[j];
+                     arreglo [j] =arreglo [j+1];
+                     arreglo[j+1]= aux;
+                 }
+             }
+         }
+         //mostrar el arreglo ordenadp en forma creciente
+         System.out.println("/n Arreglo ordenado en forma creciente ");
+         for (int i = 0; i < nElementos; i++) {
+             System.out.println(arreglo[i] + "-");
+             
+         }
+         
+         
+        
+        
+     }
+    
+
+        
+    
+     
+     public void Ejercicio5(){
+System.out.println("ingresa el primer valor");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("ingresa la hipotenusa: c");
+        int c = scanner.nextInt();
+        System.out.println("ingresa un cateto a: ");
+        int a = scanner.nextInt();
+        System.out.println("ingresa el otro cateto b;");
+        int b = scanner.nextInt();
+        
+        int cat1 = b*b;
+        int cat2 = a*a;
+        int hip = c*c;
+        
+        int resultado = cat1+cat2;
+        if (resultado == hip) {
+            System.out.println("el teorema de pitagoras cumple" + "hipotenusa = " + hip+ "suma cateto = " + resultado);
+            
+        }
+        else{
+            System.out.println("el teorema de no cumple");
+       }
+        
+    }
+     
+     public void Ejercicio6(){
+           Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("hola ingresa el numerador");
+        int numerador= scanner.nextInt();
+        System.out.println("Hola ingresa el denominador");
+        int denominador = scanner.nextInt();
+        
+       int  mcd = MCD(numerador,denominador);
+        numerador = numerador/mcd;
+        denominador = denominador/mcd;
+        
+        System.out.println("L fraccion simplificada es :" +numerador+ "/" + denominador);
+       }
+        public static int MCD(int a, int b){
+            if (b == 0) {
+                return a;
+            } else{
+                return MCD(b,a%b);
+     }
+        
+    }
+     
+    public void Ejercicio7(){
+         Scanner scanner = new Scanner(System.in);
+        int numero= 0;
+        int factorial = 1;
+        System.out.println("Ingresa el numero del factorial");
+        numero= scanner.nextInt();
+        
+        int numero1 = numero;
+        while(numero !=0){
+            factorial *=numero;
+            numero--;
+        
+        
+     }   
+        
+        System.out.println("el factorial del numero = " + numero1+ "es = " + factorial);
+    
+        
+    }
+     
+    public void Ejercicio8(){
+        float numero1 =0, numero2 =0, numero3 = 0;
+        int i=1;
+        Scanner scanner = new Scanner(System.in);
+        
+      
+        System.out.println("Ingresa el primer numero ");
+        numero1 = scanner.nextFloat();
+        System.out.println("ingresa el segundo numero");
+        numero2 = scanner.nextFloat();
+        
+        while(i<=numero1){
+            numero3 = numero3 + numero2;
+            i=i+1;
+              
+        }
+       
+        System.out.println("la multiplicacion es : " + numero3);
+        
+    }
+    
+     public void Ejercicio9(){
+         //       ArrayList<Integer> lista = new ArrayList<>();
+    
+      Scanner entrada = new Scanner(System.in);
+     int arreglo[], nElementos, pos,aux,netoTotal=0;
+     int empleado,antiguedad = 0,hrsDia = 0,hrsNoche = 0,numInasistencia = 0, neto=0,diaTotal=0;
+     
+     double dia,noche=0,isrTotal=0,isr=0,sueldoTotal=0,num=0,resultado = 0,faltas=0,total=0;
+     
+     nElementos = Integer.parseInt(JOptionPane.showInputDialog("Diguite el numero de elementos del arreglo"));
+     arreglo = new int[nElementos];  //El arreglo va a tener tantos elementos enteros que el usuario decida
+     
+        System.out.println("Diguite el arreglo :");
+        
+        for (int i = 0; i < nElementos; i++) {//bucle for
+            System.out.println( "-.Empleado :"+ (i+1));
+            
+            
+            
+            System.out.println("Antiguedad en años. ");
+            antiguedad = entrada.nextInt();
+            
+            System.out.println("Horas extra trabajadas en el Mañana/Vespetino");
+            hrsDia = entrada.nextInt();
+            
+            System.out.println("Horas extras trabajadas durante la noche" );
+            hrsNoche = entrada.nextInt();
+            
+            System.out.println("Numero de inasistencias");
+            numInasistencia = entrada.nextInt();
+           
+            
+           
+            //antiguedad
+        }
+        if (antiguedad >= 5) {
+           num = (int) (3859 * 0.10);
+              resultado = num + 3859;
+               //dia y noche
+          dia = (hrsDia * 30.5);
+         noche = hrsNoche *50.15;
+          diaTotal = (int) (dia + noche);
+        
+         //inasistencia
+         faltas = numInasistencia*120;
+        
+        double totalhrs = noche - faltas;
+        
+         //calculo del sueldo neto
+         neto = (int) (resultado + noche + faltas-diaTotal);
+        
+         if (neto<5000) {
+            isr = neto *0.5;
+           isrTotal = neto- isr;
+           sueldoTotal = isrTotal + neto;
+           //subsidio del 10%
+           netoTotal = (int) (neto*0.10);
+}
+         else{
+             isr = neto * 0.5;
+             isrTotal = neto - isr;
+         }
+         //Sueldo total a pagar
+ total=neto + netoTotal + isr;
+        }
+        else{
+            if (antiguedad>=10) {
+                 num  = (int) (3859 * 0.15);
+                 resultado = num + 3859;
+                 
+                 //dia y noche
+          dia = (hrsDia * 30.5);
+         noche = hrsNoche *50.15;
+          diaTotal = (int) (dia + noche);
+             
+         //inasistencia
+         faltas = numInasistencia*120;
+        
+        double totalhrs = noche - faltas;
+        
+         //calculo del sueldo neto
+      neto = (int) (resultado + noche + faltas-diaTotal);
+        
+         if (neto<5000) {
+            isr = neto *0.5;
+           isrTotal = neto- isr;
+           sueldoTotal = isrTotal + neto;
+             netoTotal = (int) (neto*0.10);
+}
+         else{
+             isr = neto * 0.5;
+             isrTotal = neto - isr;
+         }
+         //Sueldo total a pagar
+
+             total=neto + netoTotal + isr;
+        }
+            else{
+                if (antiguedad>=20) {
+                  num  = (float) (3859 * 0.25);  
+                  resultado = num + 3859;
+                  //dia y noche
+          dia = (hrsDia * 30.5);
+         noche = hrsNoche *50.15;
+          diaTotal = (int) (dia + noche);
+         //inasistencia
+         faltas = numInasistencia*120;
+        
+        double totalhrs = noche - faltas;
+        
+         //calculo del sueldo neto
+        neto = (int) (resultado + noche + faltas-diaTotal);        
+         if (neto<5000) {
+            isr = neto *0.5;
+           isrTotal = neto- isr;
+           sueldoTotal = isrTotal + neto;
+             netoTotal = (int) (neto*0.10);
+}
+         else{
+             isr = neto * 0.5;
+             isrTotal = neto - isr;
+             total=neto + netoTotal + isr;
+         }
+         //Sueldo total a pagar
+               
+          total=neto + netoTotal + isr;
+   
+
+                }
+               
+            }
+            
+        }
+        
+        
+       
+         
+        
+        
+       
+         
+         
+         for (int i = 0; i < nElementos; i++) {
+             System.out.println("Sueldo base: 3859.00"  );
+             System.out.println("Bono por antigüedad:" + num);
+             System.out.println("horas extras:" + diaTotal);
+             System.out.println("inasistencias: -" + faltas);
+             System.out.println("Sueldo neto:" + neto);
+             System.out.println("Aplica subsidio: " + netoTotal);
+             System.out.println("I.S.R.:" + isr);
+             System.out.println("Sueldo total a pagar:" + isrTotal);
+             
+        }
+         
+         
+         }
+    
+}
