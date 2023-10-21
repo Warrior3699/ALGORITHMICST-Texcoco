@@ -1,0 +1,106 @@
+package Test;
+
+import javax.swing.JOptionPane;
+import Metodos.Metodos;
+import java.util.Scanner;
+
+public class Ejercicio1{
+
+    public static void main(String[] args) {
+        int op;
+        Scanner leer = new Scanner(System.in);
+        Metodos pp = new Metodos();
+        do {
+            System.out.println("\tQue quiere realizar:");
+            System.out.println("\t1. Ejercicio 1");
+            System.out.println("\t2. Ejercicio 2");
+            System.out.println("\t3. Ejercicio 3");
+            System.out.println("\t4. Ejercicio 4");
+            System.out.println("\t5. Ejercicio 5");
+            System.out.println("\t6. Ejercicio 6");
+            System.out.println("\t7. Ejercicio 7");
+            System.out.println("\t8. Ejercicio 8");
+            System.out.println("\tingrese el numero que quiere realizar");
+            op = leer.nextInt();
+            switch (op) {
+
+                case 1: {
+                    System.out.println("\tRealize un programa que lea constantemente 2 datos por parte del usuario y se detenga hasta que ambos valores sean mayores a 100 ");
+
+                    pp.Ejercicio1();
+                    break;
+                }
+
+                case 2: {
+                    System.out.println("\tHola ingresa 3 datos, estos se imprimiran en serie de cada n numeros que hay entre ambos limites");
+
+                   pp.Ejercicio2();
+                   break;
+                }
+                case 3: {
+                    System.out.println("\t Realice un programa que solicite 3 datos: limiteInferior, limiteSuperior y n. \n" +
+"Y debe imprimir la serie de todos los múltiplos de n que hay entre ambos \n" +
+"límites ");
+
+                    pp.Ejercicio3();
+                    break;
+                }
+
+                case 4: {
+                    System.out.print("\t Realice un programa que pregunte al usuario cuantos datos va a ingresar, \n" +
+"que los lea y que imprima el mayor de todos los datos leídos : ");
+
+                    pp.Ejercicio4();
+                    break;
+                }
+                case 5: {
+                    System.out.print("\tRealice un programa que le pida 3 datos al usuario: a,b,c y debe imprimir \n" +
+"si los 3 números cumplen con el teorema de Pitágoras : ");
+
+                    pp.Ejercicio5();
+                    break;
+                }
+
+                case 6: {
+                    System.out.println("\t Realice un programa que pida el numerador y el denominador de una \n" +
+"fracción e imprima la fracción simplificada: ");
+                    pp.Ejercicio6();
+                    break;
+                }
+                
+               case 7: {
+                    System.out.println("\tRealice un programa que pida un número al usuario e imprima su factorial. : ");
+                    pp.Ejercicio7();
+                    break;
+                }
+               
+               case 8: {
+                    System.out.println("\t Realice un programa que calcule el producto de dos números, sin utilizar \n" +
+"el símbolo de multiplicación (*). : ");
+                    pp.Ejercicio8();
+                    break;
+                }
+               
+               case 9: {
+                    System.out.println("\t Desarrolle un programa para calcular la nómina de los empleados de una \n" +
+"empresa, bajo los siguientes supuestos.  : ");
+                    pp.Ejercicio9();
+                    break;
+                    }
+                default:
+                    System.out.println("");
+
+                    break;
+            }
+
+            try {
+                Thread.sleep(1200);
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        } while (op <= 8);
+        leer.close();
+        System.out.println("finalizo sus operaciones"); // permite detener la ejecución del thread durante t milisegundos.
+    }
+
+}
